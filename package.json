@@ -1,14 +1,20 @@
 {
   "name": "jotify-moment-mcp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Model Context Protocol (MCP) server for Jotify Moment — publish moments, upload images and query posts from Claude, Cursor or any AI Agent.",
   "main": "dist/index.js",
   "type": "module",
   "bin": {
     "jotify-moment-mcp": "./dist/index.js"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
+    "prepublishOnly": "npm run build",
     "start": "node dist/index.js",
     "dev": "tsc -w"
   },
