@@ -8,6 +8,7 @@ import {
 } from "@modelcontextprotocol/sdk/types.js";
 import { z } from "zod";
 import fs from "fs/promises";
+import pkg from "../package.json" with { type: "json" };
 import path from "path";
 
 // Configuration from environment variables
@@ -147,7 +148,7 @@ async function uploadSingleMedia(
 const server = new Server(
   {
     name: "jotify-moment-mcp",
-    version: "0.2.0",
+    version: pkg.version,
   },
   {
     capabilities: {

@@ -3,6 +3,7 @@ import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { CallToolRequestSchema, ListToolsRequestSchema, } from "@modelcontextprotocol/sdk/types.js";
 import fs from "fs/promises";
+import pkg from "../package.json" with { type: "json" };
 import path from "path";
 // Configuration from environment variables
 const BASE_URL = (process.env.JOTIFY_BASE_URL || "https://jotify.me").replace(/\/$/, "");
@@ -108,7 +109,7 @@ async function uploadSingleMedia(input, biz = "moment") {
 // Initialize MCP Server
 const server = new Server({
     name: "jotify-moment-mcp",
-    version: "0.2.0",
+    version: pkg.version,
 }, {
     capabilities: {
         tools: {},
